@@ -3,14 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://rjx0og1blt2x" path="res://Player/Sprites/PlayerSprite02.png" id="1_lk838"]
 [ext_resource type="Script" path="res://Player/script/player_state_machine.gd" id="2_4rejg"]
 [ext_resource type="Texture2D" uid="uid://dbr2i5qmfwble" path="res://Player/Sprites/AttackSprite01.png" id="2_7irgk"]
-[ext_resource type="Script" path="res://Player/script/states/state_idel.gd" id="3_e6fvg"]
+[ext_resource type="Script" path="res://Player/script/state_idel.gd" id="3_e6fvg"]
 [ext_resource type="Texture2D" uid="uid://ciuuhdoi6gii8" path="res://Player/Sprites/Shadow.png" id="3_xc3w8"]
-[ext_resource type="Script" path="res://Player/script/states/state_walk.gd" id="4_savwb"]
-[ext_resource type="Script" path="res://Player/script/states/state_attack.gd" id="5_xlunk"]
+[ext_resource type="Script" path="res://Player/script/state_walk.gd" id="4_savwb"]
+[ext_resource type="Script" path="res://Player/script/state_attack.gd" id="5_xlunk"]
 [ext_resource type="AudioStream" uid="uid://i7vgoh58m5b2" path="res://Player/Audio/SwordSwoosh.wav" id="7_xokth"]
 [ext_resource type="PackedScene" uid="uid://mjcqltnenoyg" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="9_hfn4d"]
 [ext_resource type="Script" path="res://Player/script/PlayerInteractionsHost.gd" id="9_lkeki"]
-[ext_resource type="Script" path="res://Player/script/states/state_stun.gd" id="10_oxa2l"]
+[ext_resource type="Script" path="res://Player/script/state_stun.gd" id="10_oxa2l"]
 [ext_resource type="Script" path="res://Player/script/PlayerCamera.gd" id="11_p232c"]
 [ext_resource type="PackedScene" uid="uid://41x4jjksf3us" path="res://GeneralNodes/HitBox/hit_box.tscn" id="12_gxqp7"]
 [ext_resource type="AudioStream" uid="uid://biudjanaqgl2w" path="res://Player/Audio/hit_player.wav" id="13_wbhke"]
@@ -302,10 +302,10 @@ tracks/1/path = NodePath("Sprite2D/AttackHurtBox:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0001, 0.3, 0.3001),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 18), Vector2(0, 18), Vector2(0, 18), Vector2(0, 18)]
+"values": [Vector2(0, 18), Vector2(0, 18)]
 }
 
 [sub_resource type="Animation" id="Animation_cpex1"]
@@ -330,10 +330,10 @@ tracks/1/path = NodePath("Sprite2D/AttackHurtBox:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.1001, 0.1002, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.166667, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 18), Vector2(10, 5), Vector2(11, 2.86102e-06), Vector2(10, 4.99981), Vector2(0, 18)]
+"values": [Vector2(0, 18), Vector2(10, 5), Vector2(0, 18)]
 }
 
 [sub_resource type="Animation" id="Animation_pueux"]
@@ -679,8 +679,7 @@ editor_draw_limits = true
 script = ExtResource("11_p232c")
 
 [node name="HitBox" parent="." instance=ExtResource("12_gxqp7")]
-position = Vector2(0, 10)
-collision_layer = 2
+collision_layer = 258
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 shape = SubResource("CircleShape2D_n2pqx")
