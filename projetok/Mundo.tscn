@@ -466,20 +466,20 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_qt2li")
 
 [node name="Node2D" type="Node2D"]
-y_sort_enabled = true
+z_as_relative = false
 position = Vector2(673, 407)
 metadata/_edit_horizontal_guides_ = [0.0, 0.0, 0.0]
 metadata/_edit_vertical_guides_ = [1.0]
 
 [node name="Player" parent="." instance=ExtResource("1_cbo86")]
-position = Vector2(28, -12)
+position = Vector2(4, 1)
 script = ExtResource("2_5v3pm")
 
 [node name="Sprite2D" parent="Player" index="0"]
 position = Vector2(-120, -66)
 
 [node name="CollisionShape2D" parent="Player" index="1"]
-position = Vector2(-119.5, -51.5)
+position = Vector2(-120, -51)
 
 [node name="Audio" parent="Player" index="4"]
 position = Vector2(-121, -49)
@@ -506,6 +506,9 @@ rendering_quadrant_size = 32
 [node name="Plant" parent="." instance=ExtResource("4_p8qyd")]
 position = Vector2(81, 172)
 
+[node name="Plant6" parent="." instance=ExtResource("4_p8qyd")]
+position = Vector2(-216, -57)
+
 [node name="Plant2" parent="." instance=ExtResource("4_p8qyd")]
 position = Vector2(162, 296)
 
@@ -519,7 +522,7 @@ position = Vector2(161, 219)
 position = Vector2(297, 274)
 
 [node name="Slime" parent="." instance=ExtResource("6_2df61")]
-position = Vector2(214, 259)
+position = Vector2(211, 269)
 
 [node name="Slime3" parent="." instance=ExtResource("6_2df61")]
 position = Vector2(239, 111)
@@ -528,7 +531,7 @@ position = Vector2(239, 111)
 position = Vector2(160, 81)
 
 [node name="Slime5" parent="." instance=ExtResource("6_2df61")]
-position = Vector2(-51, 73)
+position = Vector2(-211, -20)
 
 [node name="Slime2" parent="." instance=ExtResource("6_2df61")]
 position = Vector2(344, 196)

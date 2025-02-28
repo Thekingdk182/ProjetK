@@ -601,13 +601,12 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
-y_sort_enabled = true
-position = Vector2(580, 324)
+position = Vector2(578, 332)
 collision_mask = 272
 motion_mode = 1
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -21)
 texture = ExtResource("1_lk838")
 hframes = 16
 vframes = 3
@@ -626,7 +625,7 @@ autoplay = "no_attack"
 [node name="ShadowSprite" type="Sprite2D" parent="Sprite2D"]
 modulate = Color(0, 0, 0, 0.470588)
 show_behind_parent = true
-position = Vector2(0, 19)
+position = Vector2(1, 21)
 texture = ExtResource("3_xc3w8")
 
 [node name="AttackHurtBox" parent="Sprite2D" instance=ExtResource("9_hfn4d")]
@@ -640,7 +639,7 @@ shape = SubResource("CircleShape2D_eudbt")
 debug_color = Color(0.99846, 0, 0.141427, 0.42)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 20)
+position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_px3w2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -679,7 +678,7 @@ editor_draw_limits = true
 script = ExtResource("11_p232c")
 
 [node name="HitBox" parent="." instance=ExtResource("12_gxqp7")]
-position = Vector2(0, 10)
+position = Vector2(0, -13)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
