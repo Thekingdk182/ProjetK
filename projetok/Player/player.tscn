@@ -1,5 +1,6 @@
 [gd_scene load_steps=42 format=3 uid="uid://sl14pe5xbs6e"]
 
+[ext_resource type="Script" path="res://Player/script/player.gd" id="1_65ae8"]
 [ext_resource type="Texture2D" uid="uid://rjx0og1blt2x" path="res://Player/Sprites/PlayerSprite02.png" id="1_lk838"]
 [ext_resource type="Script" path="res://Player/script/player_state_machine.gd" id="2_4rejg"]
 [ext_resource type="Texture2D" uid="uid://dbr2i5qmfwble" path="res://Player/Sprites/AttackSprite01.png" id="2_7irgk"]
@@ -11,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://mjcqltnenoyg" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="9_hfn4d"]
 [ext_resource type="Script" path="res://Player/script/PlayerInteractionsHost.gd" id="9_lkeki"]
 [ext_resource type="Script" path="res://Player/script/states/state_stun.gd" id="10_oxa2l"]
-[ext_resource type="Script" path="res://Player/script/PlayerCamera.gd" id="11_p232c"]
 [ext_resource type="PackedScene" uid="uid://41x4jjksf3us" path="res://GeneralNodes/HitBox/hit_box.tscn" id="12_gxqp7"]
 [ext_resource type="AudioStream" uid="uid://biudjanaqgl2w" path="res://Player/Audio/hit_player.wav" id="13_wbhke"]
 
@@ -601,11 +601,14 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
+z_as_relative = false
 position = Vector2(578, 332)
 collision_mask = 272
 motion_mode = 1
+script = ExtResource("1_65ae8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_as_relative = false
 position = Vector2(0, -21)
 texture = ExtResource("1_lk838")
 hframes = 16
@@ -639,6 +642,7 @@ shape = SubResource("CircleShape2D_eudbt")
 debug_color = Color(0.99846, 0, 0.141427, 0.42)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
 position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_px3w2")
 
@@ -675,7 +679,6 @@ script = ExtResource("9_lkeki")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -7)
 editor_draw_limits = true
-script = ExtResource("11_p232c")
 
 [node name="HitBox" parent="." instance=ExtResource("12_gxqp7")]
 position = Vector2(0, -13)

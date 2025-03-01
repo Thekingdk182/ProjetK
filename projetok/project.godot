@@ -17,9 +17,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-LevelManager="*res://00_Globals/GlobalLevelManager.gd"
-PlayerManager="*res://00_Globals/GlobalPlayerManager.gd"
+LevelManager="*res://00_Globals/global_level_manager.gd"
 PlayerHud="*res://GUI/player_hud/player_hud.tscn"
+PlayerManager="*res://00_Globals/global_player_manager.gd"
 
 [display]
 
@@ -30,7 +30,9 @@ window/stretch/mode="canvas_items"
 folder_colors={
 "res://00_Globals/": "gray",
 "res://Enemies/": "red",
+"res://GUI/": "pink",
 "res://GeneralNodes/": "yellow",
+"res://Levels/": "blue",
 "res://Player/": "green",
 "res://Props/": "orange",
 "res://Tile Maps/": "purple"

@@ -18,29 +18,27 @@ func init() -> void:
 func enter() -> void:
 	player.animation_player.animation_finished.connect(_animation_finished)
 	
-	direction = player.global_position.direction_to( hurt_box.global_position)
+	direction = player.global_position.direction_to(hurt_box.global_position)
+	
 	player.velocity = direction*-knockback_speed
-	player.set_direction()	
+	player.set_direction()
 	player.update_animation("stun")
 	player.make_invulnerable( invulnerable_duration)
 	player.effect_animation_player.play("damaged")
 	pass
-## What happens when the player exits  this state
+	
 func exit() -> void:
 	next_state = null
 	player.animation_player.animation_finished.disconnect(_animation_finished)
 	pass
 	
-## What happens during the _process update in this state
 func process(_delta:float) -> State:
-	player.velocity -= player.velocity*decelerate_speed*_delta
+	player.velocity -= player.velocity * decelerate_speed * _delta
 	return next_state
 	
-	
-## What happens during the _physics process in this state
 func physics( _delta:float)-> State:
 	return null
-## What happens whit input events in this state	
+	
 func handle_input( _event: InputEvent) -> State:
 	return null
 	
